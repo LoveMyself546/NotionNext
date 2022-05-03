@@ -7,6 +7,23 @@ import BLOG from '@/blog.config'
  */
 const CommonScript = () => {
   return (<>
+    {(<>
+      {/* DaoVoice 反馈 */}
+      <script async dangerouslySetInnerHTML={{
+        __html: `
+                  fetch('https://v1.hitokoto.cn')
+                  .then(response => response.json())
+                  .then(data => {
+                    const hitokoto = document.getElementById('typed')
+                    hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+                    hitokoto.innerText = data.hitokoto
+                  })
+                  .catch(console.error)
+                  `
+      }}
+      />
+    </>)}
+    
     {BLOG.COMMENT_DAO_VOICE_ID && (<>
       {/* DaoVoice 反馈 */}
       <script async dangerouslySetInnerHTML={{
