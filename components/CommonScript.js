@@ -8,7 +8,7 @@ import BLOG from '@/blog.config'
 const CommonScript = () => {
   return (<>
     {(<>
-      {/* DaoVoice 反馈 */}
+      {/* 一言 */}
       <script async dangerouslySetInnerHTML={{
         __html: `
                   fetch('https://v1.hitokoto.cn')
@@ -23,7 +23,7 @@ const CommonScript = () => {
       }}
       />
     </>)}
-    
+
     {BLOG.COMMENT_DAO_VOICE_ID && (<>
       {/* DaoVoice 反馈 */}
       <script async dangerouslySetInnerHTML={{
