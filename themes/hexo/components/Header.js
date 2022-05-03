@@ -19,18 +19,18 @@ const Header = props => {
     scrollTrigger()
     updateHeaderHeight()
     updateTopNav()
-    if (!typed && window && document.getElementById('typed')) {
-      changeType(
-        new Typed('#typed', {
-          strings: CONFIG_HEXO.HOME_BANNER_GREETINGS,
-          typeSpeed: 200,
-          backSpeed: 100,
-          backDelay: 400,
-          showCursor: true,
-          smartBackspace: true
-        })
-      )
-    }
+    // if (!typed && window && document.getElementById('typed')) {
+    //   changeType(
+    //     new Typed('#typed', {
+    //       strings: CONFIG_HEXO.HOME_BANNER_GREETINGS,
+    //       typeSpeed: 200,
+    //       backSpeed: 100,
+    //       backDelay: 400,
+    //       showCursor: true,
+    //       smartBackspace: true
+    //     })
+    //   )
+    // }
     window.addEventListener('scroll', scrollTrigger)
     window.addEventListener('resize', updateHeaderHeight)
     return () => {
@@ -96,6 +96,14 @@ const Header = props => {
       }
     }, 500)
   }
+
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      const hitokoto = document.getElementById('typed')
+      hitokoto.innerText = data.hitokoto + "  --" + data.from
+    })
+    .catch(console.error)
 
   return (
     <header
