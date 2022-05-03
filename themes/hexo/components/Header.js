@@ -106,9 +106,20 @@ const Header = props => {
           `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.2), rgba(0, 0, 0, 0.8) ),url("${siteInfo?.pageCover}")`
       }}
     >
+      <script>
+      fetch('https://v1.hitokoto.cn')
+        .then(response => response.json())
+        .then(data => {
+          const hitokoto = document.getElementById('hitokoto_text')
+          hitokoto.href = 'https://hitokoto.cn/?uuid=' + data.uuid
+          hitokoto.innerText = data.hitokoto
+        })
+        .catch(console.error)
+      </script>
       <div className="absolute flex flex-col h-full items-center justify-center w-full font-sans">
         <div className='text-4xl md:text-5xl text-white shadow-text'>{siteInfo?.title}</div>
         <div className='mt-2 h-12 items-center text-center shadow-text text-white text-lg'>
+          <span id='hitokoto_text'/>
           <span id='typed'/>
         </div>
       </div>
