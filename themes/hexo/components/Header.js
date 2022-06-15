@@ -90,10 +90,8 @@ const Header = props => {
 
   function updateHeaderHeight () {
     setTimeout(() => {
-      if (window) {
-        const wrapperElement = document.getElementById('wrapper')
-        wrapperTop = wrapperElement?.offsetTop
-      }
+      const wrapperElement = document.getElementById('wrapper')
+      wrapperTop = wrapperElement?.offsetTop
     }, 500)
   }
 
@@ -111,7 +109,7 @@ const Header = props => {
       className="duration-500 md:bg-fixed w-full bg-cover bg-center h-screen bg-black text-white"
       style={{
         backgroundImage:
-          `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.2), rgba(0, 0, 0, 0.8) ),url("${siteInfo?.pageCover}")`
+          `linear-gradient(rgba(0, 0, 0, 0.8), rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0,0,0,0.2), rgba(0, 0, 0, 0.8) ),url("${siteInfo?.pageCover}")`
       }}
     >
       <div className="absolute flex flex-col h-full items-center justify-center w-full font-sans">
