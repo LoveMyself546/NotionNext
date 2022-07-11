@@ -16,7 +16,7 @@ const Header = props => {
   useEffect(() => {
     scrollTrigger()
     updateHeaderHeight()
-    updateTopNav()
+    //updateTopNav()
     // if (!typed && window && document.getElementById('typed')) {
     //   changeType(
     //     new Typed('#typed', {
