@@ -57,7 +57,7 @@ const CommonScript = () => {
 
     {/* umami统计 */}
     {BLOG.ANALYTICS_UMAMI_ID && BLOG.ANALYTICS_UMAMI_URL && (
-      <script async 
+      <script async
               defer data-website-id="${BLOG.ANALYTICS_UMAMI_ID}"
               src="${BLOG.ANALYTICS_UMAMI_URL}"
       />
