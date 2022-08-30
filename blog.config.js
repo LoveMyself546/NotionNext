@@ -112,6 +112,10 @@ const BLOG = {
   COMMENT_WALINE_SERVER_URL: process.env.NEXT_PUBLIC_WALINE_SERVER_URL || '', // Waline 评论 @see https://waline.js.org/guide/get-started.html
   COMMENT_WALINE_RECENT: process.env.NEXT_PUBLIC_WALINE_RECENT || false, // 最新评论
 
+  // umami统计
+  ANALYTICS_UMAMI_ID: "ba3c4e27-9826-4f46-a48a-5539937fc24d",
+  ANALYTICS_UMAMI_URL: "https://tj.nosafe.cf/tj.js",
+
   // 站点统计
   ANALYTICS_BUSUANZI_ENABLE: false, // 展示网站阅读量、访问数 see http://busuanzi.ibruce.info/
   ANALYTICS_BAIDU_ID: process.env.NEXT_PUBLIC_ANALYTICS_BAIDU_ID || '', // e.g 只需要填写百度统计的id，[baidu_id] -> https://hm.baidu.com/hm.js?[baidu_id]
